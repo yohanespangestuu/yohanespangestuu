@@ -1,0 +1,2054 @@
+<!DOCTYPE html>
+
+<html><head><meta charset="utf-8"><meta name="viewport" content="width=1366, maximum-scale=1.0"><link rel="shortcut icon" type="image/png" href="https://animaproject.s3.amazonaws.com/home/favicon.png"><meta name="og:type" content="website"><meta name="twitter:card" content="photo"><script id="anima-load-script" src="load.js"></script><script id="anima-hotspots-script" src="hotspots.js"></script><script id="anima-overrides-script" src="overrides.js"></script><script src="https://animaapp.s3.amazonaws.com/js/timeline.js"></script><style>
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+
+@import url("https://fonts.googleapis.com/css?family=Playfair+Display:500,400,700,600|Clicker+Script:400");
+
+@import url("https://px.animaapp.com/682c7c3b2d7a250a458b1ae7.682c7c3c2d7a250a458b1aea.aq43TJs.hch.png");
+
+
+.screen textarea:focus,
+.screen input:focus {
+  outline: none;
+}
+
+.screen * {
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
+
+.screen div {
+  -webkit-text-size-adjust: none;
+}
+
+.component-wrapper a {
+  display: contents;
+  pointer-events: auto;
+  text-decoration: none;
+}
+
+.component-wrapper * {
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+  pointer-events: none;
+}
+
+.component-wrapper a *,
+.component-wrapper input,
+.component-wrapper video,
+.component-wrapper iframe {
+  pointer-events: auto;
+}
+
+.component-wrapper.not-ready,
+.component-wrapper.not-ready * {
+  visibility: hidden !important;
+}
+
+.screen a {
+  display: contents;
+  text-decoration: none;
+}
+
+.full-width-a {
+  width: 100%;
+}
+
+.full-height-a {
+  height: 100%;
+}
+
+.container-center-vertical {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  pointer-events: none;
+}
+
+.container-center-vertical > * {
+  flex-shrink: 0;
+  pointer-events: auto;
+}
+
+.container-center-horizontal {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  pointer-events: none;
+  width: 100%;
+}
+
+.container-center-horizontal > * {
+  flex-shrink: 0;
+  pointer-events: auto;
+}
+
+.auto-animated div {
+  --z-index: -1;
+  opacity: 0;
+  position: absolute;
+}
+
+.auto-animated input {
+  --z-index: -1;
+  opacity: 0;
+  position: absolute;
+}
+
+.auto-animated .container-center-vertical,
+.auto-animated .container-center-horizontal {
+  opacity: 1;
+}
+
+.overlay-base {
+  display: none;
+  height: 100%;
+  opacity: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.overlay-base.animate-appear {
+  align-items: center;
+  animation: reveal 0.3s ease-in-out 1 normal forwards;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  opacity: 0;
+}
+
+.overlay-base.animate-disappear {
+  animation: reveal 0.3s ease-in-out 1 reverse forwards;
+  display: block;
+  opacity: 1;
+  pointer-events: none;
+}
+
+.overlay-base.animate-disappear * {
+  pointer-events: none;
+}
+
+@keyframes reveal {
+  from { opacity: 0 }
+ to { opacity: 1 }
+}
+
+.animate-nodelay {
+  animation-delay: 0s;
+}
+
+.align-self-flex-start {
+  align-self: flex-start;
+}
+
+.align-self-flex-end {
+  align-self: flex-end;
+}
+
+.align-self-flex-center {
+  align-self: flex-center;
+}
+
+.valign-text-middle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.valign-text-bottom {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+input:focus {
+  outline: none;
+}
+
+.listeners-active,
+.listeners-active * {
+  pointer-events: auto;
+}
+
+.hidden,
+.hidden * {
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.smart-layers-pointers,
+.smart-layers-pointers * {
+  pointer-events: auto;
+  visibility: visible;
+}
+
+.listeners-active-click,
+.listeners-active-click * {
+  cursor: pointer;
+}
+
+* {
+  box-sizing: border-box;
+}
+:root { 
+  --black: #000000;
+  --bridal-heath: #fff9f1;
+  --coffee: #603809;
+  --dove-gray: #707070;
+  --eerie-black: #1e1e1e;
+  --rajah: #f9c06a;
+  --rajah-2: #f9c06a6b;
+  --white: #ffffff;
+ 
+  --font-size-l: 22px;
+  --font-size-m: 20px;
+  --font-size-s: 18px;
+  --font-size-xl: 28px;
+  --font-size-xs: 16px;
+  --font-size-xxl: 54px;
+  --font-size-xxs: 14px;
+ 
+  --font-family-clicker_script: "Clicker Script", Helvetica;
+  --font-family-playfair_display: "Playfair Display", Helvetica;
+}
+.playfairdisplay-normal-dove-gray-20px {
+  color: var(--dove-gray);
+  font-family: var(--font-family-playfair_display);
+  font-size: var(--font-size-m);
+  font-style: normal;
+  font-weight: 400;
+}
+
+.playfairdisplay-bold-eerie-black-16px {
+  color: var(--eerie-black);
+  font-family: var(--font-family-playfair_display);
+  font-size: var(--font-size-xs);
+  font-style: normal;
+  font-weight: 700;
+}
+
+.playfairdisplay-normal-white-18px {
+  color: var(--white);
+  font-family: var(--font-family-playfair_display);
+  font-size: var(--font-size-s);
+  font-style: normal;
+  font-weight: 400;
+}
+
+.playfairdisplay-medium-white-14px {
+  color: var(--white);
+  font-family: var(--font-family-playfair_display);
+  font-size: var(--font-size-xxs);
+  font-style: normal;
+  font-weight: 500;
+}
+
+.playfairdisplay-bold-nutmeg-wood-finish-22px {
+  color: var(--coffee);
+  font-family: var(--font-family-playfair_display);
+  font-size: var(--font-size-l);
+  font-style: normal;
+  font-weight: 700;
+}
+
+.playfairdisplay-bold-nutmeg-wood-finish-54px {
+  color: var(--coffee);
+  font-family: var(--font-family-playfair_display);
+  font-size: var(--font-size-xxl);
+  font-style: normal;
+  font-weight: 700;
+}
+
+.playfairdisplay-normal-eerie-black-16px {
+  color: var(--eerie-black);
+  font-family: var(--font-family-playfair_display);
+  font-size: var(--font-size-xs);
+  font-style: normal;
+  font-weight: 400;
+}
+
+.playfairdisplay-bold-nutmeg-wood-finish-18px {
+  color: var(--coffee);
+  font-family: var(--font-family-playfair_display);
+  font-size: var(--font-size-s);
+  font-style: normal;
+  font-weight: 700;
+}
+
+.playfairdisplay-bold-nutmeg-wood-finish-28px {
+  color: var(--coffee);
+  font-family: var(--font-family-playfair_display);
+  font-size: var(--font-size-xl);
+  font-style: normal;
+  font-weight: 700;
+}
+
+.playfairdisplay-normal-white-20px {
+  color: var(--white);
+  font-family: var(--font-family-playfair_display);
+  font-size: var(--font-size-m);
+  font-style: normal;
+  font-weight: 400;
+}
+
+.playfairdisplay-bold-white-26px {
+  color: var(--white);
+  font-family: var(--font-family-playfair_display);
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 700;
+}
+
+:root {
+}
+
+
+/* screen - beanu95sceneu95coffeeu95landingpage */
+
+.beanu95sceneu95coffeeu95landingpage {
+  background-color: #fffdfc;
+  height: 5085px;
+  overflow: hidden;
+  overflow-x: hidden;
+  position: relative;
+  width: 1366px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .rectangle-7-66N9Wb {
+  background-color: #442808;
+  height: 492px;
+  left: 0px;
+  position: absolute;
+  top: 4593px;
+  width: 1366px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .fotter_image-66N9Wb {
+  background-blend-mode: overlay;
+  background-color: transparent;
+  height: 492px;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 4593px;
+  width: 1366px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .coffee_image-66N9Wb {
+  background-color: transparent;
+  height: 768px;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 1366px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .overlay-66N9Wb {
+  background: linear-gradient(90deg, rgba(30, 30, 30, 1) 0%, rgba(0, 0, 0, 0) 100%);
+  background-color: transparent;
+  height: 768px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 1366px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .coffee_blast-66N9Wb {
+  height: 272px;
+  left: -121px;
+  top: 1189px;
+  width: 498px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .coffee_blast-ksI2rE {
+  height: 261px;
+  left: 993px;
+  top: 1924px;
+  width: 373px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .home-66N9Wb {
+  background-color: transparent;
+  height: auto;
+  left: 493px;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  position: absolute;
+  text-align: left;
+  top: 33px;
+  width: auto;
+}
+
+.beanu95sceneu95coffeeu95landingpage .menu-66N9Wb {
+  background-color: transparent;
+  height: auto;
+  left: 591px;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  position: absolute;
+  text-align: left;
+  top: 33px;
+  width: auto;
+}
+
+.beanu95sceneu95coffeeu95landingpage .about-us-66N9Wb {
+  background-color: transparent;
+  height: auto;
+  left: 687px;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  position: absolute;
+  text-align: left;
+  top: 33px;
+  width: auto;
+}
+
+.beanu95sceneu95coffeeu95landingpage .contact-us-66N9Wb {
+  left: 804px;
+  top: 33px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .bean-scene-66N9Wb {
+  font-size: 35px;
+  left: 93px;
+  top: 20px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .sign-in-66N9Wb {
+  background-color: transparent;
+  height: auto;
+  left: 1093px;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  position: absolute;
+  text-align: left;
+  text-decoration: underline;
+  top: 33px;
+  width: auto;
+}
+
+.beanu95sceneu95coffeeu95landingpage .group-2-66N9Wb {
+  background-color: transparent;
+  height: 48px;
+  left: 1173px;
+  position: absolute;
+  top: 20px;
+  width: 102px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .rectangle-1-HzUE3m {
+  border-radius: 24px;
+  height: 48px;
+  width: 100px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .sing-up-HzUE3m {
+  background-color: transparent;
+  color: var(--eerie-black);
+  font-family: var(--font-family-playfair_display);
+  font-size: var(--font-size-xxs);
+  font-style: normal;
+  font-weight: 500;
+  height: auto;
+  left: 27px;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  position: absolute;
+  text-align: left;
+  top: 14px;
+  width: auto;
+}
+
+.beanu95sceneu95coffeeu95landingpage .group-6-66N9Wb {
+  background-color: transparent;
+  height: 490px;
+  left: 93px;
+  position: absolute;
+  top: 183px;
+  width: 527px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .group-4-uExxsP {
+  background-color: transparent;
+  height: 422px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 533px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .weve-got-your-morning-covered-with-yKFtmV {
+  background-color: transparent;
+  color: var(--white);
+  font-family: var(--font-family-playfair_display);
+  font-size: var(--font-size-l);
+  font-style: normal;
+  font-weight: 500;
+  height: auto;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  position: absolute;
+  text-align: left;
+  top: 0px;
+  width: auto;
+}
+
+.beanu95sceneu95coffeeu95landingpage .it-is-best-to-start-yKFtmV {
+  background-color: transparent;
+  height: auto;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 34px;
+  position: absolute;
+  text-align: left;
+  top: 320px;
+  width: auto;
+}
+
+.beanu95sceneu95coffeeu95landingpage .title-yKFtmV {
+  background-color: transparent;
+  color: var(--white);
+  font-family: var(--font-family-clicker_script);
+  font-size: 220px;
+  font-style: normal;
+  font-weight: 400;
+  height: auto;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  position: absolute;
+  text-align: left;
+  top: 29px;
+  width: auto;
+}
+
+.beanu95sceneu95coffeeu95landingpage .group-5-uExxsP {
+  left: 0px;
+  top: 442px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .rectangle-1-I5ocPk {
+  border-radius: 24px;
+  height: 48px;
+  width: 134px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .group-9-66N9Wb {
+  background-color: transparent;
+  height: 484px;
+  left: 93px;
+  position: absolute;
+  top: 850px;
+  width: 1180px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .group-7-hwFDh2 {
+  background-color: transparent;
+  height: 348px;
+  left: 0px;
+  position: absolute;
+  top: 68px;
+  width: 589px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .group-5-HL71Ma {
+  left: 0px;
+  top: 300px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .rectangle-1-alLclA {
+  border-radius: 24px;
+  height: 48px;
+  width: 134px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .learn-more-alLclA {
+  background-color: transparent;
+  height: auto;
+  left: 23px;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  position: absolute;
+  text-align: left;
+  top: 14px;
+  width: auto;
+}
+
+.beanu95sceneu95coffeeu95landingpage .bean-scene-is-a-coff-HL71Ma {
+  background-color: transparent;
+  height: auto;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 34px;
+  position: absolute;
+  text-align: left;
+  top: 101px;
+  width: 585px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .discover-the-best-coffee-HL71Ma {
+  background-color: transparent;
+  height: auto;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  position: absolute;
+  text-align: left;
+  top: 0px;
+  width: auto;
+}
+
+.beanu95sceneu95coffeeu95landingpage .mask-group-hwFDh2 {
+  background-color: transparent;
+  height: 484px;
+  left: 680px;
+  position: absolute;
+  top: 0px;
+  width: 500px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .group-25-66N9Wb {
+  background-color: transparent;
+  height: 542px;
+  left: 93px;
+  position: absolute;
+  top: 1416px;
+  width: 1184px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .explore-all-flavours-QS2FKM {
+  background-color: transparent;
+  height: auto;
+  left: 100px;
+  letter-spacing: 0.00px;
+  line-height: 34px;
+  position: absolute;
+  text-align: center;
+  top: 88px;
+  width: 980px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .enjoy-a-new-blend-of-coffee-style-QS2FKM {
+  background-color: transparent;
+  height: auto;
+  left: 193px;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  position: absolute;
+  text-align: left;
+  top: 0px;
+  width: auto;
+}
+
+.beanu95sceneu95coffeeu95landingpage .group-21-QS2FKM {
+  background-color: transparent;
+  height: 388px;
+  left: 0px;
+  position: absolute;
+  top: 154px;
+  width: 1180px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .group-17-4GR016 {
+  background-color: transparent;
+  height: 388px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 280px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .rectangle-6-V1RrAg {
+  background-color: var(--bridal-heath);
+  border: 1px solid;
+  border-color: var(--rajah-2);
+  height: 364px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .rectangle-7-V1RrAg {
+  background-color: transparent;
+  height: 222px;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 280px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .group-5-V1RrAg {
+  left: 73px;
+  top: 340px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .rectangle-1-aQrxaL {
+  border-radius: 24px;
+  height: 48px;
+  width: 134px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .group-10-V1RrAg {
+  background-color: transparent;
+  height: 86px;
+  left: 63px;
+  position: absolute;
+  top: 236px;
+  width: 160px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .cappuccino-VqoYgx {
+  background-color: transparent;
+  height: auto;
+  left: 16px;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  position: absolute;
+  text-align: left;
+  top: 0px;
+  width: auto;
+}
+
+.beanu95sceneu95coffeeu95landingpage .rp25k-VqoYgx {
+  background-color: transparent;
+  height: auto;
+  left: 54px;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  position: absolute;
+  text-align: left;
+  top: 62px;
+  width: auto;
+}
+
+.beanu95sceneu95coffeeu95landingpage .group-18-4GR016 {
+  background-color: transparent;
+  height: 388px;
+  left: 300px;
+  position: absolute;
+  top: 0px;
+  width: 280px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .rectangle-8-Uc9ffr {
+  background-color: var(--bridal-heath);
+  border: 1px solid;
+  border-color: var(--rajah-2);
+  height: 364px;
+  width: 280px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .rectangle-9-Uc9ffr {
+  background-color: transparent;
+  height: 222px;
+  object-fit: cover;
+}
+
+.beanu95sceneu95coffeeu95landingpage .group-11-Uc9ffr {
+  background-color: transparent;
+  height: 48px;
+  left: 73px;
+  position: absolute;
+  top: 340px;
+  width: 136px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .rectangle-1-snqL6C {
+  border-radius: 24px;
+  height: 48px;
+  width: 134px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .group-12-Uc9ffr {
+  background-color: transparent;
+  height: 86px;
+  left: 63px;
+  position: absolute;
+  top: 236px;
+  width: 160px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .chai-latte-273CJJ {
+  background-color: transparent;
+  height: auto;
+  left: 25px;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  position: absolute;
+  text-align: left;
+  top: 0px;
+  width: auto;
+}
+
+.beanu95sceneu95coffeeu95landingpage .rp23k-273CJJ {
+  background-color: transparent;
+  height: auto;
+  left: 54px;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  position: absolute;
+  text-align: left;
+  top: 62px;
+  width: auto;
+}
+
+.beanu95sceneu95coffeeu95landingpage .group-19-4GR016 {
+  background-color: transparent;
+  height: 388px;
+  left: 600px;
+  position: absolute;
+  top: 0px;
+  width: 280px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .rectangle-10-x4yMfT {
+  background-color: var(--bridal-heath);
+  border: 1px solid;
+  border-color: var(--rajah-2);
+  height: 364px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 280px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .rectangle-11-x4yMfT {
+  background-color: transparent;
+  height: 222px;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 280px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .group-13-x4yMfT {
+  background-color: transparent;
+  height: 48px;
+  left: 73px;
+  position: absolute;
+  top: 340px;
+  width: 136px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .rectangle-1-rnZFDG {
+  border-radius: 24px;
+  height: 48px;
+  width: 134px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .group-14-x4yMfT {
+  background-color: transparent;
+  height: 86px;
+  left: 63px;
+  position: absolute;
+  top: 236px;
+  width: 160px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .macchiato-lPMdxp {
+  background-color: transparent;
+  height: auto;
+  left: 24px;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  position: absolute;
+  text-align: left;
+  top: 0px;
+  width: auto;
+}
+
+.beanu95sceneu95coffeeu95landingpage .rp32k-lPMdxp {
+  background-color: transparent;
+  height: auto;
+  left: 54px;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  position: absolute;
+  text-align: left;
+  top: 62px;
+  width: auto;
+}
+
+.beanu95sceneu95coffeeu95landingpage .group-20-4GR016 {
+  background-color: transparent;
+  height: 388px;
+  left: 900px;
+  position: absolute;
+  top: 0px;
+  width: 280px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .rectangle-12-4xSK5c {
+  background-color: var(--bridal-heath);
+  border: 1px solid;
+  border-color: var(--rajah-2);
+  height: 364px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 280px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .rectangle-13-4xSK5c {
+  background-color: transparent;
+  height: 222px;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 280px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .group-15-4xSK5c {
+  background-color: transparent;
+  height: 48px;
+  left: 73px;
+  position: absolute;
+  top: 340px;
+  width: 136px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .rectangle-1-KB0cdH {
+  border-radius: 24px;
+  height: 48px;
+  width: 134px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .group-16-4xSK5c {
+  background-color: transparent;
+  height: 86px;
+  left: 63px;
+  position: absolute;
+  top: 236px;
+  width: 160px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .expresso-JNFR67 {
+  background-color: transparent;
+  height: auto;
+  left: 31px;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  position: absolute;
+  text-align: left;
+  top: 0px;
+  width: auto;
+}
+
+.beanu95sceneu95coffeeu95landingpage .rp18k-JNFR67 {
+  background-color: transparent;
+  height: auto;
+  left: 54px;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  position: absolute;
+  text-align: left;
+  top: 62px;
+  width: auto;
+}
+
+.beanu95sceneu95coffeeu95landingpage .group-35-66N9Wb {
+  background-color: transparent;
+  height: 612px;
+  left: 93px;
+  position: absolute;
+  top: 2040px;
+  width: 1182px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .group-5-wGO6qx {
+  left: 523px;
+  top: 564px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .rectangle-1-D5yS3G {
+  border-radius: 24px;
+  height: 48px;
+  width: 134px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .join-us-D5yS3G {
+  background-color: transparent;
+  height: auto;
+  left: 41px;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  position: absolute;
+  text-align: left;
+  top: 14px;
+  width: auto;
+}
+
+.beanu95sceneu95coffeeu95landingpage .great-ideas-start-wi-wGO6qx {
+  background-color: transparent;
+  color: transparent;
+  font-family: var(--font-family-playfair_display);
+  font-size: var(--font-size-m);
+  font-style: normal;
+  font-weight: 400;
+  height: auto;
+  left: 100px;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 470px;
+  width: 980px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .span0-cxpRHs {
+  font-style: normal;
+}
+
+.beanu95sceneu95coffeeu95landingpage .span1-cxpRHs {
+  color: var(--coffee);
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 700;
+}
+
+.beanu95sceneu95coffeeu95landingpage .group-23-wGO6qx {
+  background-color: transparent;
+  height: 122px;
+  left: 100px;
+  position: absolute;
+  top: 0px;
+  width: 984px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .we-dont-just-make-yo-HDjqYW {
+  background-color: transparent;
+  height: auto;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 34px;
+  position: absolute;
+  text-align: center;
+  top: 88px;
+  width: 980px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .why-are-we-different-HDjqYW {
+  background-color: transparent;
+  height: auto;
+  left: 221px;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  position: absolute;
+  text-align: left;
+  top: 0px;
+  width: auto;
+}
+
+.beanu95sceneu95coffeeu95landingpage .group-34-wGO6qx {
+  background-color: transparent;
+  height: 284px;
+  left: 0px;
+  position: absolute;
+  top: 154px;
+  width: 1180px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .group-32-TKFqhg {
+  background-color: transparent;
+  height: 284px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 280px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .rectangle-6-u2mhLM {
+  background-color: #ffeed8;
+  height: 284px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .group-26-u2mhLM {
+  background-color: transparent;
+  height: 212px;
+  left: 39px;
+  position: absolute;
+  top: 36px;
+  width: 205px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .supreme-beans-pwlqfc {
+  background-color: transparent;
+  height: auto;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  position: absolute;
+  text-align: left;
+  top: 113px;
+  width: auto;
+}
+
+.beanu95sceneu95coffeeu95landingpage .beans-that-provides-great-taste-pwlqfc {
+  background-color: transparent;
+  height: auto;
+  left: 13px;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 158px;
+  width: auto;
+}
+
+.beanu95sceneu95coffeeu95landingpage .coffee-beans-1-pwlqfc {
+  background-color: transparent;
+  height: 88px;
+  left: 57px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 88px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .group-33-TKFqhg {
+  background-color: transparent;
+  height: 284px;
+  left: 300px;
+  position: absolute;
+  top: 0px;
+  width: 280px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .rectangle-7-H2Vj42 {
+  background-color: var(--bridal-heath);
+  border: 1px solid;
+  border-color: var(--rajah-2);
+  height: 284px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 280px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .group-27-H2Vj42 {
+  background-color: transparent;
+  height: 212px;
+  left: 57px;
+  position: absolute;
+  top: 36px;
+  width: 170px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .high-quality-WPsBxS {
+  background-color: transparent;
+  height: auto;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  position: absolute;
+  text-align: left;
+  top: 113px;
+  width: auto;
+}
+
+.beanu95sceneu95coffeeu95landingpage .we-provide-the-highest-quality-WPsBxS {
+  background-color: transparent;
+  height: auto;
+  left: 16px;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 158px;
+  width: auto;
+}
+
+.beanu95sceneu95coffeeu95landingpage .badge-1-WPsBxS {
+  background-color: transparent;
+  height: 88px;
+  left: 39px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 88px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .group-29-TKFqhg {
+  background-color: transparent;
+  height: 284px;
+  left: 600px;
+  position: absolute;
+  top: 0px;
+  width: 280px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .rectangle-8-7XBzAP {
+  background-color: var(--bridal-heath);
+  border: 1px solid;
+  border-color: var(--rajah-2);
+  height: 284px;
+  width: 280px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .group-28-7XBzAP {
+  background-color: transparent;
+  height: 212px;
+  left: 49px;
+  position: absolute;
+  top: 36px;
+  width: 187px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .extraordinary-iIpQYJ {
+  background-color: transparent;
+  height: auto;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  position: absolute;
+  text-align: left;
+  top: 113px;
+  width: auto;
+}
+
+.beanu95sceneu95coffeeu95landingpage .coffee-like-you-have-never-tasted-iIpQYJ {
+  background-color: transparent;
+  height: auto;
+  left: 3px;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 158px;
+  width: auto;
+}
+
+.beanu95sceneu95coffeeu95landingpage .coffee-cup-1-iIpQYJ {
+  background-color: transparent;
+  height: 88px;
+  left: 48px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 88px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .group-31-TKFqhg {
+  background-color: transparent;
+  height: 284px;
+  left: 900px;
+  position: absolute;
+  top: 0px;
+  width: 280px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .rectangle-9-9HIJfj {
+  background-color: var(--bridal-heath);
+  border: 1px solid;
+  border-color: var(--rajah-2);
+  height: 284px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .group-30-9HIJfj {
+  background-color: transparent;
+  height: 212px;
+  left: 35px;
+  position: absolute;
+  top: 36px;
+  width: 215px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .affordable-price-DlKQhb {
+  background-color: transparent;
+  height: auto;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  position: absolute;
+  text-align: left;
+  top: 113px;
+  width: auto;
+}
+
+.beanu95sceneu95coffeeu95landingpage .our-coffee-prices-are-easy-to-afford-DlKQhb {
+  background-color: transparent;
+  height: auto;
+  left: 10px;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 158px;
+  width: auto;
+}
+
+.beanu95sceneu95coffeeu95landingpage .best-price-1-DlKQhb {
+  background-color: transparent;
+  height: 88px;
+  left: 62px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 88px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .group-38-66N9Wb {
+  background-color: transparent;
+  height: 574px;
+  left: 0px;
+  position: absolute;
+  top: 2734px;
+  width: 1490px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .group-36-FGDm5p {
+  background-color: transparent;
+  height: 574px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 1366px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .rectangle-14-XZVPVj {
+  height: 574px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .rectangle-16-XZVPVj {
+  height: 574px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .group-37-FGDm5p {
+  background-color: transparent;
+  height: 304px;
+  left: 93px;
+  position: absolute;
+  top: 135px;
+  width: 579px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .we-are-giving-you-ar-xjJPe9 {
+  background-color: transparent;
+  height: auto;
+  left: 4px;
+  letter-spacing: 0.00px;
+  line-height: 34px;
+  position: absolute;
+  text-align: left;
+  top: 166px;
+  width: auto;
+}
+
+.beanu95sceneu95coffeeu95landingpage .get-a-chance-to-have-an-amazing-morning-xjJPe9 {
+  background-color: transparent;
+  color: var(--white);
+  font-family: var(--font-family-playfair_display);
+  font-size: var(--font-size-xxl);
+  font-style: normal;
+  font-weight: 700;
+  height: auto;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  position: absolute;
+  text-align: left;
+  top: 0px;
+  width: auto;
+}
+
+.beanu95sceneu95coffeeu95landingpage .group-5-xjJPe9 {
+  left: 0px;
+  top: 256px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .rectangle-1-Og1xqA {
+  border-radius: 24px;
+  height: 48px;
+  width: 134px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .coffee_bean-FGDm5p {
+  background-color: transparent;
+  height: 574px;
+  left: 833px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 657px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .cup-FGDm5p {
+  background-color: transparent;
+  height: 467px;
+  left: 893px;
+  object-fit: cover;
+  position: absolute;
+  top: 54px;
+  width: 300px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .group-46-66N9Wb {
+  background-color: transparent;
+  height: 374px;
+  left: 0px;
+  position: absolute;
+  top: 4219px;
+  width: 1366px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .rectangle-14-5D5qgp {
+  height: 374px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .rectangle-16-5D5qgp {
+  height: 374px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .group-44-66N9Wb {
+  background-color: transparent;
+  height: 749px;
+  left: -26px;
+  position: absolute;
+  top: 3390px;
+  width: 1456px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .rectangle-7-IOHlK0 {
+  background-color: var(--bridal-heath);
+  border: 1px solid;
+  border-color: var(--rajah-2);
+  height: 524px;
+  left: 219px;
+  position: absolute;
+  top: 167px;
+  width: 980px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .speach-IOHlK0 {
+  background-color: transparent;
+  color: var(--dove-gray);
+  font-family: var(--font-family-playfair_display);
+  font-size: var(--font-size-s);
+  font-style: normal;
+  font-weight: 600;
+  height: auto;
+  left: 319px;
+  letter-spacing: 0.00px;
+  line-height: 36px;
+  position: absolute;
+  text-align: center;
+  top: 296px;
+  width: 780px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .group-39-IOHlK0 {
+  background-color: transparent;
+  height: 122px;
+  left: 219px;
+  position: absolute;
+  top: 0px;
+  width: 984px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .our-customers-has-am-So6PlN {
+  background-color: transparent;
+  height: auto;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 34px;
+  position: absolute;
+  text-align: center;
+  top: 88px;
+  width: 980px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .our-coffee-perfection-feedback-So6PlN {
+  background-color: transparent;
+  height: auto;
+  left: 108px;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  position: absolute;
+  text-align: left;
+  top: 0px;
+  width: auto;
+}
+
+.beanu95sceneu95coffeeu95landingpage .yohanes-pangestu-IOHlK0 {
+  background-color: transparent;
+  color: var(--coffee);
+  font-family: var(--font-family-playfair_display);
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  height: auto;
+  left: 604px;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  position: absolute;
+  text-align: left;
+  top: 509px;
+  width: auto;
+}
+
+.beanu95sceneu95coffeeu95landingpage .text_label-IOHlK0 {
+  background-color: transparent;
+  color: var(--coffee);
+  font-family: var(--font-family-playfair_display);
+  font-size: 220px;
+  font-style: normal;
+  font-weight: 700;
+  height: auto;
+  left: 248px;
+  letter-spacing: 0.00px;
+  line-height: 112px;
+  position: absolute;
+  text-align: left;
+  top: 221px;
+  white-space: nowrap;
+  width: auto;
+}
+
+.beanu95sceneu95coffeeu95landingpage .project-manager-IOHlK0 {
+  background-color: transparent;
+  height: auto;
+  left: 636px;
+  letter-spacing: 0.00px;
+  line-height: 34px;
+  position: absolute;
+  text-align: center;
+  top: 556px;
+  white-space: nowrap;
+  width: auto;
+}
+
+.beanu95sceneu95coffeeu95landingpage .group-42-IOHlK0 {
+  background-color: transparent;
+  height: 82px;
+  left: 178px;
+  position: absolute;
+  top: 388px;
+  width: 82px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .rectangle-1-UrCIl5 {
+  border-radius: 16px;
+  height: 82px;
+  width: 82px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .group-40-UrCIl5 {
+  background-color: transparent;
+  height: 24px;
+  left: 29px;
+  position: absolute;
+  top: 29px;
+  width: 24px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .img_9066-1-IOHlK0 {
+  background-color: transparent;
+  height: 155px;
+  left: 657px;
+  object-fit: cover;
+  position: absolute;
+  top: 594px;
+  width: 104px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .group-43-IOHlK0 {
+  background-color: transparent;
+  height: 82px;
+  left: 1158px;
+  position: absolute;
+  top: 388px;
+  width: 82px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .rectangle-8-ltkigg {
+  background-color: var(--rajah);
+  border-radius: 16px;
+  box-shadow: 0px 6px 12px #f9c06a38;
+  height: 82px;
+  width: 82px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .group-41-ltkigg {
+  background-color: transparent;
+  height: 24px;
+  left: 29px;
+  position: absolute;
+  top: 29px;
+  width: 24px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .coffee_blast-IOHlK0 {
+  height: 272px;
+  left: 950px;
+  top: 49px;
+  width: 442px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .coffee_blast-vDCMzG {
+  height: 226px;
+  left: 0px;
+  top: 521px;
+  width: 414px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .group-59-66N9Wb {
+  background-color: transparent;
+  height: 258px;
+  left: 741px;
+  position: absolute;
+  top: 4755px;
+  width: 138px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .company-qSuBK9 {
+  background-color: transparent;
+  height: auto;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  position: absolute;
+  text-align: left;
+  top: 0px;
+  width: auto;
+}
+
+.beanu95sceneu95coffeeu95landingpage .how-we-work-terms-of-service-pricing-faq-qSuBK9 {
+  background-color: transparent;
+  height: auto;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 42px;
+  position: absolute;
+  text-align: left;
+  top: 90px;
+  width: auto;
+}
+
+.beanu95sceneu95coffeeu95landingpage .group-58-66N9Wb {
+  background-color: transparent;
+  height: 258px;
+  left: 539px;
+  position: absolute;
+  top: 4755px;
+  width: 140px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .about-QU04m7 {
+  background-color: transparent;
+  height: auto;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  position: absolute;
+  text-align: left;
+  top: 0px;
+  width: auto;
+}
+
+.beanu95sceneu95coffeeu95landingpage .menu-features-news-blogs-help-supports-QU04m7 {
+  background-color: transparent;
+  height: auto;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 42px;
+  position: absolute;
+  text-align: left;
+  top: 90px;
+  width: auto;
+}
+
+.beanu95sceneu95coffeeu95landingpage .group-57-66N9Wb {
+  background-color: transparent;
+  height: 258px;
+  left: 941px;
+  position: absolute;
+  top: 4755px;
+  width: 334px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .contact-us-kY0RXv {
+  left: 0px;
+  top: 0px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .group-56-kY0RXv {
+  background-color: transparent;
+  height: 192px;
+  left: 0px;
+  position: absolute;
+  top: 66px;
+  width: 340px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .yogyakarta-72AR5Z {
+  background-color: transparent;
+  height: auto;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  position: absolute;
+  text-align: left;
+  top: 0px;
+  width: 332px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .x85709097182-72AR5Z {
+  background-color: transparent;
+  height: auto;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  position: absolute;
+  text-align: left;
+  top: 76px;
+  width: auto;
+}
+
+.beanu95sceneu95coffeeu95landingpage .beanscenemailcom-72AR5Z {
+  background-color: transparent;
+  height: auto;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  position: absolute;
+  text-align: left;
+  top: 122px;
+  width: auto;
+}
+
+.beanu95sceneu95coffeeu95landingpage .wwwbeanscenecom-72AR5Z {
+  background-color: transparent;
+  height: auto;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  position: absolute;
+  text-align: left;
+  top: 168px;
+  width: auto;
+}
+
+.beanu95sceneu95coffeeu95landingpage .pngwing-1-66N9Wb {
+  background-color: transparent;
+  height: 358px;
+  left: -147px;
+  object-fit: cover;
+  position: absolute;
+  top: 4357px;
+  width: 444px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .pngwing-2-66N9Wb {
+  background-color: transparent;
+  height: 358px;
+  left: 1081px;
+  object-fit: cover;
+  position: absolute;
+  top: 4357px;
+  width: 285px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .group-49-66N9Wb {
+  background-color: transparent;
+  height: 214px;
+  left: 193px;
+  position: absolute;
+  top: 4299px;
+  width: 980px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .group-45-IE7sFJ {
+  background-color: transparent;
+  height: 122px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 984px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .dont-miss-out-on-our-2Aq0c0 {
+  background-color: transparent;
+  height: auto;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 34px;
+  position: absolute;
+  text-align: center;
+  top: 88px;
+  width: 980px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .subscribe-to-get-the-latest-news-2Aq0c0 {
+  background-color: transparent;
+  color: var(--white);
+  font-family: var(--font-family-playfair_display);
+  font-size: var(--font-size-xxl);
+  font-style: normal;
+  font-weight: 700;
+  height: auto;
+  left: 92px;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  position: absolute;
+  text-align: left;
+  top: 0px;
+  width: auto;
+}
+
+.beanu95sceneu95coffeeu95landingpage .group-48-IE7sFJ {
+  background-color: transparent;
+  height: 66px;
+  left: 169px;
+  position: absolute;
+  top: 148px;
+  width: 644px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .rectangle-7-c85PBo {
+  background-color: var(--bridal-heath);
+  border: 1px solid;
+  border-color: var(--rajah-2);
+  border-radius: 4px;
+  height: 66px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 642px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .group-47-c85PBo {
+  background-color: transparent;
+  height: 66px;
+  left: 505px;
+  position: absolute;
+  top: 0px;
+  width: 139px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .rectangle-8-3KMVkI {
+  background-color: var(--rajah);
+  border-radius: 4px;
+  box-shadow: 0px 6px 12px #f9c06a38;
+  height: 66px;
+  width: 137px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .suscribe-3KMVkI {
+  background-color: transparent;
+  height: auto;
+  left: 24px;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  position: absolute;
+  text-align: left;
+  top: 19px;
+  width: auto;
+}
+
+.beanu95sceneu95coffeeu95landingpage .enter-your-mail-c85PBo {
+  background-color: transparent;
+  color: #00000057;
+  font-family: var(--font-family-playfair_display);
+  font-size: var(--font-size-m);
+  font-style: normal;
+  font-weight: 400;
+  height: auto;
+  left: 26px;
+  letter-spacing: 0.00px;
+  line-height: 34px;
+  position: absolute;
+  text-align: center;
+  top: 16px;
+  white-space: nowrap;
+  width: auto;
+}
+
+.beanu95sceneu95coffeeu95landingpage .group-60-66N9Wb {
+  background-color: transparent;
+  height: 258px;
+  left: 93px;
+  position: absolute;
+  top: 4755px;
+  width: 384px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .bean-scene-4kWxz7 {
+  font-size: var(--font-size-xxl);
+  left: 0px;
+  top: 0px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .telah-ada-sejak-2025-4kWxz7 {
+  background-color: transparent;
+  color: var(--white);
+  font-family: var(--font-family-playfair_display);
+  font-size: var(--font-size-xxs);
+  font-style: normal;
+  font-weight: 400;
+  height: auto;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 22px;
+  position: absolute;
+  text-align: left;
+  top: 91px;
+  width: 380px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .group-54-4kWxz7 {
+  background-color: transparent;
+  height: 24px;
+  left: 0px;
+  position: absolute;
+  top: 234px;
+  width: 156px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .group-53-pdaMoF {
+  background-color: transparent;
+  height: 24px;
+  left: 132px;
+  position: absolute;
+  top: 0px;
+  width: 24px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .group-50-pdaMoF {
+  background-color: transparent;
+  height: 24px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 24px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .group-51-pdaMoF {
+  background-color: transparent;
+  height: 24px;
+  left: 44px;
+  position: absolute;
+  top: 0px;
+  width: 24px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .group-52-pdaMoF {
+  background-color: transparent;
+  height: 24px;
+  left: 88px;
+  position: absolute;
+  top: 0px;
+  width: 24px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .bean-scene {
+  background-color: transparent;
+  color: var(--white);
+  font-family: var(--font-family-clicker_script);
+  font-style: normal;
+  font-weight: 400;
+  height: auto;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  position: absolute;
+  text-align: left;
+  width: auto;
+}
+
+.beanu95sceneu95coffeeu95landingpage .coffee-50-milk-50 {
+  background-color: transparent;
+  height: auto;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  position: absolute;
+  text-align: left;
+  top: 35px;
+  width: auto;
+}
+
+.beanu95sceneu95coffeeu95landingpage .coffee_blast {
+  background-color: transparent;
+  object-fit: cover;
+  position: absolute;
+}
+
+.beanu95sceneu95coffeeu95landingpage .contact-us {
+  background-color: transparent;
+  height: auto;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  position: absolute;
+  text-align: left;
+  width: auto;
+}
+
+.beanu95sceneu95coffeeu95landingpage .group-5 {
+  background-color: transparent;
+  height: 48px;
+  position: absolute;
+  width: 136px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .order-now {
+  background-color: transparent;
+  height: auto;
+  left: 26px;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  position: absolute;
+  text-align: left;
+  top: 14px;
+  width: auto;
+}
+
+.beanu95sceneu95coffeeu95landingpage .rectangle-1 {
+  background-color: var(--rajah);
+  box-shadow: 0px 6px 12px #f9c06a38;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .rectangle-14 {
+  background-color: transparent;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 1366px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .rectangle-16 {
+  background-color: var(--coffee);
+  left: 0px;
+  opacity: 0.8;
+  position: absolute;
+  top: 0px;
+  width: 1366px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .rectangle-6 {
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 280px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .rectangle-8 {
+  left: 0px;
+  position: absolute;
+  top: 0px;
+}
+
+.beanu95sceneu95coffeeu95landingpage .rectangle-9 {
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 280px;
+}
+</style></head><body style="margin: 0;background: #fffdfc;"><input type="hidden" id="anPageName" name="page" value="beanu95sceneu95coffeeu95landingpage"><div class="container-center-horizontal"><div class="beanu95sceneu95coffeeu95landingpage screen " data-id="1:4"><div class="rectangle-7-66N9Wb" data-id="4:51"></div><img class="fotter_image-66N9Wb" data-id="4:92" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/682c7c402d7a250a458b1aec/releases/682c8a707747152949ea76cf/img/fotter-image.png" alt="fotter_image"><img class="coffee_image-66N9Wb" data-id="1:41" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/682c7c402d7a250a458b1aec/releases/682c8a707747152949ea76cf/img/coffee-image.png" alt="coffee_image"><div class="overlay-66N9Wb" data-id="2:42"></div><img class="coffee_blast-66N9Wb coffee_blast" data-id="2:165" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/682c7c402d7a250a458b1aec/releases/682c8a707747152949ea76cf/img/coffee-blast-1.png" alt="coffee_blast"><img class="coffee_blast-ksI2rE coffee_blast" data-id="2:164" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/682c7c402d7a250a458b1aec/releases/682c8a707747152949ea76cf/img/coffee-blast@2x.png" alt="coffee_blast"><div class="home-66N9Wb playfairdisplay-medium-white-14px" data-id="1:7">Home</div><div class="menu-66N9Wb playfairdisplay-medium-white-14px" data-id="1:8">Menu</div><div class="about-us-66N9Wb playfairdisplay-medium-white-14px" data-id="1:9">About Us</div><div class="contact-us-66N9Wb contact-us playfairdisplay-medium-white-14px" data-id="1:11">Contact Us</div><div class="bean-scene-66N9Wb bean-scene" data-id="1:12">Bean Scene</div><div class="sign-in-66N9Wb playfairdisplay-medium-white-14px" data-id="1:13">Sign In</div><div class="group-2-66N9Wb" data-id="1:14"><div class="rectangle-1-HzUE3m rectangle-1" data-id="1:15"></div><div class="sing-up-HzUE3m" data-id="1:16">SingUp</div></div><div class="group-6-66N9Wb" data-id="1:40"><div class="group-4-uExxsP" data-id="1:33"><p class="weve-got-your-morning-covered-with-yKFtmV" data-id="1:30">We’ve got your morning covered with</p><p class="it-is-best-to-start-yKFtmV playfairdisplay-normal-white-20px" data-id="1:32">It is best to start your day with a cup of coffee. Discover the<br>best flavours coffee you will ever have. We provide the best<br>for our customers.</p><h1 class="title-yKFtmV" data-id="1:31">Coffee</h1></div><div class="group-5-uExxsP group-5" data-id="1:37"><div class="rectangle-1-I5ocPk rectangle-1" data-id="1:35"></div><div class="order-now playfairdisplay-bold-eerie-black-16px" data-id="1:36">Order Now</div></div></div><div class="group-9-66N9Wb" data-id="2:67"><div class="group-7-hwFDh2" data-id="2:51"><div class="group-5-HL71Ma group-5" data-id="2:48"><div class="rectangle-1-alLclA rectangle-1" data-id="2:49"></div><div class="learn-more-alLclA playfairdisplay-bold-eerie-black-16px" data-id="2:50">Learn More</div></div><p class="bean-scene-is-a-coff-HL71Ma playfairdisplay-normal-dove-gray-20px" data-id="2:46">Bean Scene is a coffee shop that provides you with quality coffee that helps boost your productivity and helps build your mood. Having a cup of coffee is good, but having a cup of real coffee is greater. There is no doubt that you will enjoy this coffee more than others you have ever tasted.</p><div class="discover-the-best-coffee-HL71Ma playfairdisplay-bold-nutmeg-wood-finish-54px" data-id="2:45">Discover the best coffee</div></div><img class="mask-group-hwFDh2" data-id="2:55" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/682c7c402d7a250a458b1aec/releases/682c8a707747152949ea76cf/img/mask-group.png" alt="Mask group"></div><div class="group-25-66N9Wb" data-id="2:117"><p class="explore-all-flavours-QS2FKM playfairdisplay-normal-dove-gray-20px" data-id="2:65">Explore all flavours of coffee with us. There is always a new cup worth experiencing</p><p class="enjoy-a-new-blend-of-coffee-style-QS2FKM playfairdisplay-bold-nutmeg-wood-finish-54px" data-id="2:66">Enjoy a new blend of coffee style</p><div class="group-21-QS2FKM" data-id="2:107"><div class="group-17-4GR016" data-id="2:103"><div class="rectangle-6-V1RrAg rectangle-6" data-id="2:57"></div><img class="rectangle-7-V1RrAg" data-id="2:68" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/682c7c402d7a250a458b1aec/releases/682c8a707747152949ea76cf/img/rectangle-7.png" alt="Rectangle 7"><div class="group-5-V1RrAg group-5" data-id="2:72"><div class="rectangle-1-aQrxaL rectangle-1" data-id="2:73"></div><div class="order-now playfairdisplay-bold-eerie-black-16px" data-id="2:74">Order Now</div></div><div class="group-10-V1RrAg" data-id="2:75"><div class="cappuccino-VqoYgx playfairdisplay-bold-nutmeg-wood-finish-22px" data-id="2:69">Cappuccino</div><p class="coffee-50-milk-50 playfairdisplay-normal-eerie-black-16px" data-id="2:70">Coffee 50% | Milk 50%</p><div class="rp25k-VqoYgx playfairdisplay-bold-nutmeg-wood-finish-18px" data-id="2:71">Rp.25k</div></div></div><div class="group-18-4GR016" data-id="2:104"><div class="rectangle-8-Uc9ffr rectangle-8" data-id="2:76"></div><img class="rectangle-9-Uc9ffr rectangle-9" data-id="2:77" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/682c7c402d7a250a458b1aec/releases/682c8a707747152949ea76cf/img/rectangle-9.png" alt="Rectangle 9"><div class="group-11-Uc9ffr" data-id="2:78"><div class="rectangle-1-snqL6C rectangle-1" data-id="2:79"></div><div class="order-now playfairdisplay-bold-eerie-black-16px" data-id="2:80">Order Now</div></div><div class="group-12-Uc9ffr" data-id="2:81"><div class="chai-latte-273CJJ playfairdisplay-bold-nutmeg-wood-finish-22px" data-id="2:82">Chai Latte</div><p class="coffee-50-milk-50 playfairdisplay-normal-eerie-black-16px" data-id="2:83">Coffee 50% | Milk 50%</p><div class="rp23k-273CJJ playfairdisplay-bold-nutmeg-wood-finish-18px" data-id="2:84">Rp,23k</div></div></div><div class="group-19-4GR016" data-id="2:105"><div class="rectangle-10-x4yMfT" data-id="2:85"></div><img class="rectangle-11-x4yMfT" data-id="2:86" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/682c7c402d7a250a458b1aec/releases/682c8a707747152949ea76cf/img/rectangle-11.png" alt="Rectangle 11"><div class="group-13-x4yMfT" data-id="2:87"><div class="rectangle-1-rnZFDG rectangle-1" data-id="2:88"></div><div class="order-now playfairdisplay-bold-eerie-black-16px" data-id="2:89">Order Now</div></div><div class="group-14-x4yMfT" data-id="2:90"><div class="macchiato-lPMdxp playfairdisplay-bold-nutmeg-wood-finish-22px" data-id="2:91">Macchiato</div><p class="coffee-50-milk-50 playfairdisplay-normal-eerie-black-16px" data-id="2:92">Coffee 50% | Milk 50%</p><div class="rp32k-lPMdxp playfairdisplay-bold-nutmeg-wood-finish-18px" data-id="2:93">Rp.32k</div></div></div><div class="group-20-4GR016" data-id="2:106"><div class="rectangle-12-4xSK5c" data-id="2:94"></div><img class="rectangle-13-4xSK5c" data-id="2:95" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/682c7c402d7a250a458b1aec/releases/682c8a707747152949ea76cf/img/rectangle-13.png" alt="Rectangle 13"><div class="group-15-4xSK5c" data-id="2:96"><div class="rectangle-1-KB0cdH rectangle-1" data-id="2:97"></div><div class="order-now playfairdisplay-bold-eerie-black-16px" data-id="2:98">Order Now</div></div><div class="group-16-4xSK5c" data-id="2:99"><div class="expresso-JNFR67 playfairdisplay-bold-nutmeg-wood-finish-22px" data-id="2:100">Expresso</div><p class="coffee-50-milk-50 playfairdisplay-normal-eerie-black-16px" data-id="2:101">Coffee 50% | Milk 50%</p><div class="rp18k-JNFR67 playfairdisplay-bold-nutmeg-wood-finish-18px" data-id="2:102">Rp.18k</div></div></div></div></div><div class="group-35-66N9Wb" data-id="2:144"><div class="group-5-wGO6qx group-5" data-id="2:140"><div class="rectangle-1-D5yS3G rectangle-1" data-id="2:141"></div><div class="join-us-D5yS3G playfairdisplay-bold-eerie-black-16px" data-id="2:142">Join Us</div></div><p class="great-ideas-start-wi-wGO6qx" data-id="2:139"><span class="span0-cxpRHs playfairdisplay-normal-dove-gray-20px">Great ideas start with great coffee, Lets help you achieve that<br></span><span class="span1-cxpRHs">Get started today.</span></p><div class="group-23-wGO6qx" data-id="2:111"><p class="we-dont-just-make-yo-HDjqYW playfairdisplay-normal-dove-gray-20px" data-id="2:109">We don’t just make your coffee, we make your day!</p><div class="why-are-we-different-HDjqYW playfairdisplay-bold-nutmeg-wood-finish-54px" data-id="2:110">Why are we different?</div></div><div class="group-34-wGO6qx" data-id="2:143"><div class="group-32-TKFqhg" data-id="2:137"><div class="rectangle-6-u2mhLM rectangle-6" data-id="2:112"></div><div class="group-26-u2mhLM" data-id="2:131"><div class="supreme-beans-pwlqfc playfairdisplay-bold-nutmeg-wood-finish-28px" data-id="2:119">Supreme Beans</div><div class="beans-that-provides-great-taste-pwlqfc playfairdisplay-normal-dove-gray-20px" data-id="2:120">Beans that provides<br>great taste</div><img class="coffee-beans-1-pwlqfc" data-id="2:127" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/682c7c402d7a250a458b1aec/releases/682c8a707747152949ea76cf/img/coffee-beans-1.png" alt="coffee-beans 1"></div></div><div class="group-33-TKFqhg" data-id="2:138"><div class="rectangle-7-H2Vj42" data-id="2:113"></div><div class="group-27-H2Vj42" data-id="2:132"><div class="high-quality-WPsBxS playfairdisplay-bold-nutmeg-wood-finish-28px" data-id="2:121">High Quality</div><div class="we-provide-the-highest-quality-WPsBxS playfairdisplay-normal-dove-gray-20px" data-id="2:122">We provide the<br>highest quality</div><img class="badge-1-WPsBxS" data-id="2:128" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/682c7c402d7a250a458b1aec/releases/682c8a707747152949ea76cf/img/badge-1.png" alt="badge 1"></div></div><div class="group-29-TKFqhg" data-id="2:134"><div class="rectangle-8-7XBzAP rectangle-8" data-id="2:114"></div><div class="group-28-7XBzAP" data-id="2:133"><div class="extraordinary-iIpQYJ playfairdisplay-bold-nutmeg-wood-finish-28px" data-id="2:123">Extraordinary</div><p class="coffee-like-you-have-never-tasted-iIpQYJ playfairdisplay-normal-dove-gray-20px" data-id="2:124">Coffee like you have<br>never tasted</p><img class="coffee-cup-1-iIpQYJ" data-id="2:129" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/682c7c402d7a250a458b1aec/releases/682c8a707747152949ea76cf/img/coffee-cup-1.png" alt="coffee-cup 1"></div></div><div class="group-31-TKFqhg" data-id="2:136"><div class="rectangle-9-9HIJfj rectangle-9" data-id="2:115"></div><div class="group-30-9HIJfj" data-id="2:135"><div class="affordable-price-DlKQhb playfairdisplay-bold-nutmeg-wood-finish-28px" data-id="2:125">Affordable Price</div><p class="our-coffee-prices-are-easy-to-afford-DlKQhb playfairdisplay-normal-dove-gray-20px" data-id="2:126">Our Coffee prices are<br>easy to afford</p><img class="best-price-1-DlKQhb" data-id="2:130" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/682c7c402d7a250a458b1aec/releases/682c8a707747152949ea76cf/img/best-price-1.png" alt="best-price 1"></div></div></div></div><div class="group-38-66N9Wb" data-id="2:167"><div class="group-36-FGDm5p" data-id="2:155"><img class="rectangle-14-XZVPVj rectangle-14" data-id="2:147" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/682c7c402d7a250a458b1aec/releases/682c8a707747152949ea76cf/img/rectangle-14.png" alt="Rectangle 14"><div class="rectangle-16-XZVPVj rectangle-16" data-id="2:149"></div></div><div class="group-37-FGDm5p" data-id="2:159"><p class="we-are-giving-you-ar-xjJPe9 playfairdisplay-normal-white-20px" data-id="2:150">We are giving you are one time opportunity to<br>experience a better life with coffee.</p><p class="get-a-chance-to-have-an-amazing-morning-xjJPe9" data-id="2:151">Get a chance to have an<br>Amazing morning</p><div class="group-5-xjJPe9 group-5" data-id="2:156"><div class="rectangle-1-Og1xqA rectangle-1" data-id="2:157"></div><div class="order-now playfairdisplay-bold-eerie-black-16px" data-id="2:158">Order Now</div></div></div><img class="coffee_bean-FGDm5p" data-id="2:166" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/682c7c402d7a250a458b1aec/releases/682c8a707747152949ea76cf/img/coffee-bean.png" alt="coffee_bean"><img class="cup-FGDm5p" data-id="2:161" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/682c7c402d7a250a458b1aec/releases/682c8a707747152949ea76cf/img/cup.png" alt="cup"></div><div class="group-46-66N9Wb" data-id="4:43"><img class="rectangle-14-5D5qgp rectangle-14" data-id="4:25" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/682c7c402d7a250a458b1aec/releases/682c8a707747152949ea76cf/img/rectangle-14.png" alt="Rectangle 14"><div class="rectangle-16-5D5qgp rectangle-16" data-id="4:26"></div></div><div class="group-44-66N9Wb" data-id="4:35"><div class="rectangle-7-IOHlK0" data-id="4:4"></div><p class="speach-IOHlK0" data-id="4:7">Kopi tidak lagi hanya menjadi pendamping saat kita bersantai tapi telah berubah menjadi teman yang menemani segala keadaan kita, pikiran yang tenang dimulai dengan secangkir kopi yang lezat, Sudah seruput kopimu hari ini ?</p><div class="group-39-IOHlK0" data-id="2:171"><p class="our-customers-has-am-So6PlN playfairdisplay-normal-dove-gray-20px" data-id="2:169">Our customers has amazing things to say about us</p><div class="our-coffee-perfection-feedback-So6PlN playfairdisplay-bold-nutmeg-wood-finish-54px" data-id="2:170">Our coffee perfection feedback</div></div><div class="yohanes-pangestu-IOHlK0" data-id="4:8">Yohanes Pangestu</div><div class="text_label-IOHlK0" data-id="4:11">“</div><div class="project-manager-IOHlK0 playfairdisplay-normal-dove-gray-20px" data-id="4:9">Project Manager</div><div class="group-42-IOHlK0" data-id="4:19"><div class="rectangle-1-UrCIl5 rectangle-1" data-id="4:5"></div><img class="group-40-UrCIl5" data-id="4:15" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/682c7c402d7a250a458b1aec/releases/682c8a707747152949ea76cf/img/group-40@2x.png" alt="Group 40"></div><img class="img_9066-1-IOHlK0" data-id="102:33" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/682c7c402d7a250a458b1aec/releases/682c8a707747152949ea76cf/img/img-9066-1@2x.png" alt="IMG_9066 1"><div class="group-43-IOHlK0" data-id="4:20"><div class="rectangle-8-ltkigg rectangle-8" data-id="4:6"></div><img class="group-41-ltkigg" data-id="4:16" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/682c7c402d7a250a458b1aec/releases/682c8a707747152949ea76cf/img/group-41@2x.png" alt="Group 41"></div><img class="coffee_blast-IOHlK0 coffee_blast" data-id="4:21" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/682c7c402d7a250a458b1aec/releases/682c8a707747152949ea76cf/img/coffee-blast@2x.png" alt="coffee_blast"><img class="coffee_blast-vDCMzG coffee_blast" data-id="4:22" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/682c7c402d7a250a458b1aec/releases/682c8a707747152949ea76cf/img/coffee-blast-1.png" alt="coffee_blast"></div><div class="group-59-66N9Wb" data-id="4:90"><div class="company-qSuBK9 playfairdisplay-bold-white-26px" data-id="4:58">Company</div><p class="how-we-work-terms-of-service-pricing-faq-qSuBK9 playfairdisplay-normal-white-18px" data-id="4:59">How we work<br>Terms of service<br>Pricing<br>FAQ</p></div><div class="group-58-66N9Wb" data-id="4:89"><div class="about-QU04m7 playfairdisplay-bold-white-26px" data-id="4:63">About</div><p class="menu-features-news-blogs-help-supports-QU04m7 playfairdisplay-normal-white-18px" data-id="4:64">Menu<br>Features<br>News &amp; Blogs<br>Help &amp; Supports</p></div><div class="group-57-66N9Wb" data-id="4:88"><div class="contact-us-kY0RXv contact-us playfairdisplay-bold-white-26px" data-id="4:52">Contact Us</div><div class="group-56-kY0RXv" data-id="4:87"><div class="yogyakarta-72AR5Z playfairdisplay-normal-white-18px" data-id="4:53">Yogyakarta</div><div class="x85709097182-72AR5Z playfairdisplay-normal-white-18px" data-id="4:54">+85709097182</div><div class="beanscenemailcom-72AR5Z playfairdisplay-normal-white-18px" data-id="4:55">beanscene@mail.com</div><div class="wwwbeanscenecom-72AR5Z playfairdisplay-normal-white-18px" data-id="4:57">www.beanscene.com</div></div></div><img class="pngwing-1-66N9Wb" data-id="4:40" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/682c7c402d7a250a458b1aec/releases/682c8a707747152949ea76cf/img/pngwing-1.png" alt="pngwing 1"><img class="pngwing-2-66N9Wb" data-id="4:41" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/682c7c402d7a250a458b1aec/releases/682c8a707747152949ea76cf/img/pngwing-2@2x.png" alt="pngwing 2"><div class="group-49-66N9Wb" data-id="4:50"><div class="group-45-IE7sFJ" data-id="4:39"><p class="dont-miss-out-on-our-2Aq0c0 playfairdisplay-normal-white-20px" data-id="4:37">Don’t miss out on our latest news, updates, tips and special offers</p><p class="subscribe-to-get-the-latest-news-2Aq0c0" data-id="4:38">Subscribe to get the Latest News</p></div><div class="group-48-IE7sFJ" data-id="4:49"><div class="rectangle-7-c85PBo" data-id="4:42"></div><div class="group-47-c85PBo" data-id="4:48"><div class="rectangle-8-3KMVkI rectangle-8" data-id="4:45"></div><div class="suscribe-3KMVkI playfairdisplay-bold-nutmeg-wood-finish-22px" data-id="4:47">Suscribe</div></div><div class="enter-your-mail-c85PBo" data-id="4:46">Enter your mail</div></div></div><div class="group-60-66N9Wb" data-id="4:91"><div class="bean-scene-4kWxz7 bean-scene" data-id="4:65">Bean Scene</div><div class="telah-ada-sejak-2025-4kWxz7" data-id="4:66">Telah ada sejak 2025</div><div class="group-54-4kWxz7" data-id="4:83"><img class="group-53-pdaMoF" data-id="4:82" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/682c7c402d7a250a458b1aec/releases/682c8a707747152949ea76cf/img/group-53@2x.png" alt="Group 53"><img class="group-50-pdaMoF" data-id="4:70" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/682c7c402d7a250a458b1aec/releases/682c8a707747152949ea76cf/img/group-50@2x.png" alt="Group 50"><img class="group-51-pdaMoF" data-id="4:74" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/682c7c402d7a250a458b1aec/releases/682c8a707747152949ea76cf/img/group-51@2x.png" alt="Group 51"><img class="group-52-pdaMoF" data-id="4:78" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/682c7c402d7a250a458b1aec/releases/682c8a707747152949ea76cf/img/group-52@2x.png" alt="Group 52"></div></div></div></div><script src="launchpad-js/launchpad-banner.js" async></script><script defer src="https://animaapp.s3.amazonaws.com/static/restart-btn.min.js"></script></body></html>
